@@ -5,8 +5,8 @@ public class Main {
         // arithmeticOperators();
         // assignmentOperators();
         // comparisonOperators();
-        logicalOperators();
-        // incrementDecrementOperators();
+        // logicalOperators();
+        incrementDecrementOperators();
 
         // call
         add(5, 10);
@@ -130,6 +130,10 @@ public class Main {
 
     public static void incrementDecrementOperators() {
         System.out.println("=================incrementDecrementOperators================");
+        int a = 5;
+
+        // System.out.println("++a=" + (++a)); // 6
+        System.out.println("++a=" + (a++)); // 5
 
     }
 
