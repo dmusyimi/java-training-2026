@@ -3,8 +3,8 @@ package io.github.talentdevelopment004.operators;
 public class Main {
     public static void main(String[] args) {
         // arithmeticOperators();
-        assignmentOperators();
-        // comparisonOperators();
+        // assignmentOperators();
+        comparisonOperators();
         // logicalOperators();
         // incrementDecrementOperators();
 
@@ -78,6 +78,21 @@ public class Main {
 
     public static void comparisonOperators() {
         System.out.println("=================comparisonOperators================");
+        int a = 10, b = 5, c = 10;
+        System.out.println("Comparison Operations on a=" + a + ", b=" + b + " c=" + c);
+        System.out.println("a == c: " + (a == c)); // true
+        System.out.println("a != b: " + (a != b)); // true
+        System.out.println("a > b: " + (a > b)); // true
+        System.out.println("a < b: " + (a < b)); // false
+        System.out.println("a >= c: " + (a >= c)); // true
+        System.out.println("b <= a: " + (b <= a)); // true
+
+        // For objects, use .equals() instead of ==
+        String s1 = "hello";
+        String s2 = "hello";
+
+        // reference
+        System.out.println("Strings equal: " + s1.equals(s2)); // true
 
     }
 
