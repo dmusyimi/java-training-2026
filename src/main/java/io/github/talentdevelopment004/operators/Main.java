@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         // arithmeticOperators();
         // assignmentOperators();
-        comparisonOperators();
-        // logicalOperators();
+        // comparisonOperators();
+        logicalOperators();
         // incrementDecrementOperators();
 
         // call
@@ -98,7 +98,34 @@ public class Main {
 
     public static void logicalOperators() {
         System.out.println("=================logicalOperators================");
+        int balance = 10000;
+        int charges = 115;
 
+        int withdrawalAmount = 10000;
+
+        // condition withdrawalAmount+charges <= balance
+
+        // meet charges
+        // correct pin
+
+        boolean isAbleToWithdraw = (withdrawalAmount + charges) <= balance;
+        boolean isLoggedIn = false;
+
+        System.out.println("You can withdraw(&&): " + (isAbleToWithdraw && isLoggedIn));
+
+        // A && B
+        // T and T -> T
+        // T and F -> F
+        // F and T -> F
+        // F and F -> F
+
+        // using OR -> ||
+
+        System.out.println("isLoggedIn or isAbleToWithdraw: " + (isLoggedIn || isAbleToWithdraw));
+        // NOT !
+
+        System.out.println(" isAbleToWithdraw: " + !isAbleToWithdraw);
+        System.out.println(" isLoggedIn: " + !isLoggedIn);
     }
 
     public static void incrementDecrementOperators() {
