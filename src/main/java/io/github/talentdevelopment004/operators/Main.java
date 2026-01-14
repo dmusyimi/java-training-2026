@@ -2,11 +2,11 @@ package io.github.talentdevelopment004.operators;
 
 public class Main {
     public static void main(String[] args) {
-        arithmeticOperators();
+        // arithmeticOperators();
         assignmentOperators();
-        comparisonOperators();
-        logicalOperators();
-        incrementDecrementOperators();
+        // comparisonOperators();
+        // logicalOperators();
+        // incrementDecrementOperators();
 
         // call
         add(5, 10);
@@ -41,6 +41,39 @@ public class Main {
     public static void assignmentOperators() {
         System.out.println("=================assignmentOperators================");
 
+        int balance = 20000;
+
+        // deposit 5000
+        balance = balance + 5000; //
+        // balance += 5000;
+        System.out.println("Current balance after deposit: " + balance);
+
+        // withdraw 8000 charges 115
+        // balance = balance - 8115;
+        // balance -= 8115;
+        // balance -= 8000;
+        // balance -= 115;
+
+        balance -= (8000 + 115);
+
+        System.out.println("Current balance after withdraw: " + balance);
+
+        // charity work 3 children homes equally distribute the amounts
+        System.out.println("Remainder " + (balance % 3));
+        // balance = balance / 3;
+        double disbursement = (double) balance / 3;
+        System.out.println("Amount to be disbursed: " + disbursement);
+
+        int x = 10; // Basic assignment
+
+        x += 5; // x = x + 5 → 15
+        x -= 3; // x = x - 3 → 12
+        x *= 2; // x = x * 2 → 24
+        x /= 4; // x = x / 4 → 6
+        x %= 4; // x = x % 4 → 2
+
+        System.out.println("Final x: " + x);
+
     }
 
     public static void comparisonOperators() {
@@ -59,3 +92,6 @@ public class Main {
     }
 
 }
+
+// -----------(-128)-- (-127)----------------------------(127)----
+// -----------(-128.000)--128.001-----------------------------(127)----
