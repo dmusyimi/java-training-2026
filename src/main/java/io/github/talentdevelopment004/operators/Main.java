@@ -1,5 +1,7 @@
 package io.github.talentdevelopment004.operators;
 
+import static io.github.talentdevelopment004.methods.MathHelper.calculateCircleArea;
+
 public class Main {
     public static void main(String[] args) {
         // arithmeticOperators();
@@ -135,6 +137,10 @@ public class Main {
         // System.out.println("++a=" + (++a)); // 6
         System.out.println("++a=" + (a++)); // 5
 
+    }
+
+    public static void calculateArea() {
+        calculateCircleArea(4.5);
     }
 
 }

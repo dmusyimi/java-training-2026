@@ -1,5 +1,7 @@
 package io.github.talentdevelopment004.variables;
 
+import io.github.talentdevelopment004.methods.MathHelper;
+
 @SuppressWarnings("unused")
 public class Main {
     public static void main(String[] args) {
@@ -32,6 +34,6 @@ public class Main {
         int num = Integer.parseInt(number);
         Double.parseDouble(number);
         Float.parseFloat(number);
-
+        MathHelper.printMessage("I love Java", 5);
     }
 }
