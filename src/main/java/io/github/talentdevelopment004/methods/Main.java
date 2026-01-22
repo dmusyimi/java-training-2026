@@ -1,5 +1,8 @@
 package io.github.talentdevelopment004.methods;
 
+import io.github.talentdevelopment004.variables.Vehicle;
+import io.github.talentdevelopment004.variablescope.Car;
+
 public class Main {
     public static void main(String[] args) {
         // withoutMethods();

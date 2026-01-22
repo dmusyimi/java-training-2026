@@ -50,4 +50,23 @@ public class MathHelper {
 
     public static void create(String name, int id) {
     }
+
+    //? list of numbers > 2 and more
+    //? list of numbers of different types
+    //? a mix of different types, double,  add int
+
+
+    public static int addTwoNumbers(int a, int b) {
+        return a + b;
+    }
+
+    public static int addThreeNumbers(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static int addThreeNumbersDoubleType(double a, double b, double c) {
+        double result = a + b + c;
+        System.out.println(result);
+        return (int) result;
+    }
 }
