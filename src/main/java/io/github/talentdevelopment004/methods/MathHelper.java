@@ -1,6 +1,7 @@
 package io.github.talentdevelopment004.methods;
 
-public class MathHelper {
+public final class MathHelper {
+
     public static double calculateCircleArea(double radius) {
         final double PI = 3.14159;
         double result = PI * radius * radius; // Math.pow(radius,2);
@@ -51,10 +52,9 @@ public class MathHelper {
     public static void create(String name, int id) {
     }
 
-    //? list of numbers > 2 and more
-    //? list of numbers of different types
-    //? a mix of different types, double,  add int
-
+    // ? list of numbers > 2 and more
+    // ? list of numbers of different types
+    // ? a mix of different types, double, add int
 
     public static int addTwoNumbers(int a, int b) {
         return a + b;
