@@ -30,7 +30,9 @@ public class MathUtility {
     }
 
     class NonStaticClass {
-
+        public void printMessage(String message, String name) {
+            System.out.println(message + " " + name);
+        }
     }
 
 }

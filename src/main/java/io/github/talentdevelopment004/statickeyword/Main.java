@@ -1,6 +1,7 @@
 package io.github.talentdevelopment004.statickeyword;
 
 import io.github.talentdevelopment004.methods.MathHelper;
+import io.github.talentdevelopment004.polyabstract.Animal;
 
 public class Main {
     static {
@@ -10,14 +11,37 @@ public class Main {
     public static void main(String[] args) {
         staticDemo();
 
-        System.out.println(Config.DB_PASSWORD);
-        var app = new Main();
-        app.connection(Config.DB_URL, Config.DB_USERNAME, Config.DB_PASSWORD);
-        DatabaseConfig.displayConfig();
-        DatabaseConfig.displayConfig();
+        Animal animal = new Animal() {
+            @Override
+            public void makeSound() {
+                System.out.println("Cow moos!!");
 
-        System.out.println(MathUtility.Adder.add(23, 4, 5, 56, 78));
-        MathUtility a = new MathUtility();
+            }
+        };
+
+        animal.makeSound();
+        Outer outer = new Outer();
+        Outer.Inner inner = outer.new Inner();
+        inner.method();
+
+        /*
+         * System.out.println(Config.DB_PASSWORD);
+         * var app = new Main();
+         * app.connection(Config.DB_URL, Config.DB_USERNAME, Config.DB_PASSWORD);
+         * DatabaseConfig.displayConfig();
+         * DatabaseConfig.displayConfig();
+         * 
+         * System.out.println(MathUtility.Adder.add(23, 4, 5, 56, 78));
+         * 
+         * // nested static classes
+         * System.out.println(MathUtility.AreaCalculator.circleArea(5));
+         * // nested non-static classes
+         * MathUtility mathUtility = new MathUtility();
+         * NonStaticClass nonStaticClass = mathUtility.new NonStaticClass();
+         * nonStaticClass.printMessage("guten morgen", "Eve");
+         * LocalClassDemo localClassDemo = new LocalClassDemo();
+         * localClassDemo.processData();
+         */
 
     }
 
