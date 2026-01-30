@@ -4,7 +4,7 @@ package io.github.talentdevelopment004.interfaces;
 // contract
 public interface ThreePinPlug {
 
-    void accessPower();
+    public abstract void accessPower();
 
     void printUsage();
 
@@ -15,7 +15,6 @@ public interface ThreePinPlug {
 
     static void printSpecifications() {
         System.out.println("Specifications");
-
 
     }
 

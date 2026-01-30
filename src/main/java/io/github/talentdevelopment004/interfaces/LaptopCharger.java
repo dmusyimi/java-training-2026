@@ -1,6 +1,6 @@
 package io.github.talentdevelopment004.interfaces;
 
-public  class LaptopCharger implements ThreePinPlug,StudentService {
+public class LaptopCharger implements ThreePinPlug, StudentService {
 
     @Override
     public void accessPower() {
