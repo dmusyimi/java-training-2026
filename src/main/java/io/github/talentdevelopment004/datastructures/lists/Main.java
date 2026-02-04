@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // accountsDemo();
-        List<Integer> numbers = new ArrayList<>();
+        List<Integer> numbers = new MyCustomList<>();
         numbers.add(67);
         numbers.add(98);
         numbers.add(12);
