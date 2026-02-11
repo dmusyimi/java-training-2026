@@ -15,16 +15,34 @@ public class Main {
     public static void main(String[] args) {
 
         // lambdaSyntaxAndFunctionalInterface();
-        commonBuiltInFunctionalInterfaces();
-
+//        commonBuiltInFunctionalInterfaces();
+        effectiveFinalVariables();
     }
+//    private   static  String prefix ="Mr. ";
+    private static void effectiveFinalVariables() {
+         String prefix = "Mr."; // effectively
+        Consumer<String> consumer = s-> {
+//            prefix = "test"; //throws an compilation error 
+            System.out.println(prefix + s);
+        };
+        List<String> list = List.of("Abednego", "Mathew", "Ezra");
+        list.forEach(consumer);
 
+        // Static variable capture - no restrictions
+        Supplier<String> staticSupplier = () -> "Static value: " + StaticCounter.count;
+        System.out.println(staticSupplier.get());
+    }
+    class StaticCounter {
+        public static int count = 0;
+    }
     private static void commonBuiltInFunctionalInterfaces() {
         System.out.println("=================Predicates===========");
         predicates();
         System.out.println("=================Functions===========");
         functions();
         System.out.println("=================Consumers===========");
+//        Main main = new Main();
+//        main.consumers();
         consumers();
         System.out.println("=================Supplier===========");
         suppliers();
@@ -32,6 +50,29 @@ public class Main {
         unaryOperators();
         System.out.println("=================UnaryOperator===========");
         binaryOperators();
+        consumeIntegers(
+                (t) -> System.out.println(t + "^2=" + Math.pow(t, 2)),
+                List.of(1, 2, 3, 4, 5, 6, 7, 8));
+        List<Phone> phones = List.of(
+                new Phone("Samsung A35", "Samsung", 2025),
+                new Phone("Red magic", "RedMg", 2024),
+                new Phone("OnePlus", "one+", 2026)
+
+        );
+        for (Phone phone : phones) {
+            predicatePhone(t -> t.getYear() == 2026, phone);
+        }
+
+    }
+
+    private static void predicatePhone(Predicate<Phone> phonePredicate, Phone phone) {
+        System.out.println(phone.getName() + " New phone?=> " + phonePredicate.test(phone));
+    }
+
+    private static void consumeIntegers(Consumer<Integer> integerConsumer, List<Integer> numbers) {
+        for (Integer integer : numbers) {
+            integerConsumer.accept(integer);
+        }
 
     }
 
@@ -72,9 +113,30 @@ public class Main {
         phones.forEach(phoneConsumer);
 
         phones.forEach(phone -> System.out.println(phone.getName().toUpperCase()));
+        System.out.println("========================Method References start======");
+        phones.forEach(phone -> Utility.printToLowerCase(phone));
 
+        phones.forEach( Utility::printToLowerCase);
+        phones.forEach( Main::printPhoneNameLength); // when the function is static
+        phones.forEach(phone -> System.out.println(phone.getName()));
+        System.out.println("========================Method References End======");
+        String prefix = "Hello ";
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        names.forEach(prefix::concat); // Equivalent to: s -> prefix.concat(s)
+        Main app = new Main();
+        names.forEach(app::printListOfNames);
+    }
+    void nonStaticCodeBlock(){
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        names.forEach(this::printListOfNames); // Equivalent to: s -> prefix.concat(s)
+    }
+    void  printListOfNames(String name){
+        System.out.println(name);
     }
 
+    public static void printPhoneNameLength(Phone phone) {
+        System.out.println(phone.getName().length());
+    }
     private static void functions() {
         Function<String, Integer> function = t -> t.trim().length();
 
