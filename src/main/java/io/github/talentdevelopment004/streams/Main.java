@@ -35,7 +35,49 @@ public class Main {
         // .mapToInt(x -> x.length())
         // .sum());
         // sortingAndPeeking();
-        terminalOperations();
+        // terminalOperations();
+        var app = new Main();
+        app.parallelStreams();
+
+
+
+    }
+
+    public int processRecord(int input) {
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            // Handle interrupted exception
+        }
+        return input + 1;
+    }
+
+
+    public void processAllData(List<Integer> data) {
+
+        int sum = data.stream().map(this::processRecord).mapToInt(Integer::intValue).sum();
+    }
+
+    public void processAllDataParallel(List<Integer> data) {
+
+        int sum = data.parallelStream().map(this::processRecord).mapToInt(Integer::intValue).sum();
+    }
+
+    private void parallelStreams() {
+        var app = new Main();
+        List<Integer> numbers = IntStream.range(1, 1_000).boxed().collect(Collectors.toList());
+        // Process the data
+        long start = System.currentTimeMillis();
+        app.processAllData(numbers);
+        double sequentialTime = (System.currentTimeMillis() - start)/1000.0;
+        // Report results
+        System.out.println("\nTasks completed in sequential : " + sequentialTime + " seconds");
+
+         start = System.currentTimeMillis();
+        app.processAllDataParallel(numbers);
+        double  parallelTime = (System.currentTimeMillis() - start)/1000.0;
+        System.out.println("\nTasks completed in parallel : " + parallelTime + " seconds");
+
 
     }
 
